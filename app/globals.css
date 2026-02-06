@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts as fallbacks */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Font face declarations for Proxima Nova fallback */
+@font-face {
+  font-family: 'Proxima Nova';
+  src: local('Proxima Nova Light'), local('ProximaNova-Light');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: local('Proxima Nova'), local('ProximaNova-Regular');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: local('Proxima Nova Semibold'), local('ProximaNova-Semibold');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: local('Proxima Nova Bold'), local('ProximaNova-Bold');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom styles for the website */
+.nav-link {
+  @apply text-white text-[11px] font-semibold uppercase tracking-[0.15em] transition-colors duration-200;
+}
+
+.nav-link:hover {
+  @apply text-white/80;
+}
+
+/* Folder dropdown styles */
+.folder-dropdown {
+  @apply absolute top-full left-0 min-w-[220px] bg-dark shadow-lg opacity-0 invisible transition-all duration-200;
+}
+
+.folder:hover .folder-dropdown {
+  @apply opacity-100 visible;
+}
+
+/* Social icon styles */
+.social-icon {
+  @apply w-10 h-10 rounded-full border-2 border-white/30 flex items-center justify-center text-white transition-all duration-200 hover:border-white hover:bg-white/10;
+}
+
+/* Section heading styles */
+.section-title {
+  @apply text-[28px] font-normal text-dark font-serif tracking-normal;
+}
+
+/* Card link styles */
+.card-link {
+  @apply text-primary text-[15px] font-serif italic transition-colors duration-200;
+}
+
+.card-link:hover {
+  @apply text-primary-dark;
+}
